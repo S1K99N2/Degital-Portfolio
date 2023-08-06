@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@media (max-width: 992px) {
+  #section {
+    /* background-color: aqua; */
+    width: 100%;
+    height: 150vh;
+  }
+  .Header_section {
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem 0   ;
+  }
+
+  #header_1 {
+    width: 100%;
+    display: block;
+    height: 50vh;
+    justify-content: center;
+    align-items: center;
+  }
+  .title {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #header_1 .title p {
+    text-align: center;
+    margin: 0 auto;
+    width: 80%;
+  }
+  #header_2 {
+    width: 100%;
+    height: 70vw;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  #header_2 .charecter {
+    width: 50%;
+    height: 70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header2_img{
+    width: 50vw;
+  min-height: 50vw;
+  }
+   nav .nav ul li:last-child{
+    visibility: hidden;
+   }
+  /* styling section-1 styling  */
+  #section_edu{
+    /* margin-top: 3rem; */
+    min-height: 100vh;
+}
+  .under_edu{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  .title_edu{
+    width: 100%;
+    text-align: center;
+  }
+  .title_edu h1{
+   display: grid;
+   place-items: center   ;
+
+  }
+  .card_edu .matric,
+.card_edu .inter,
+.card_edu .btech{
+  position:unset;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.matric .card_box{
+  transform:  translateX(0px) translateY(-20px);
+}
+.inter .card_box{
+  transform:  translateX(0px) translateY(-20px);
+}
+.btech .card_box{
+  transform:  translateX(0px) translateY(-20px);
+}
+  .card_edu{
+    width: 100%;
+    min-height: 40vh;
+   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+  }
+  .matric,.inter,.btech{
+    margin: 2rem 0;
+  }
+  .content-show {
+    height: 400px;
+}
+.about .about_1{
+  margin-bottom: 2rem;
+}
+/* about part  */
+.about_2 button{
+  transform: translateX(100%);
+}
+input[type="submit"]{
+  width: 70%;
+  height: 2rem;
+}
+}
+ @media (max-width: 700px) {
+  .copy_right {
+      height: 10vh;
+    }
+  .footer_title {
+    padding:0.5rem 0;
+    align-items: center;
+    flex-direction: column;
+    font-size: 0.9rem;
+  }
+  .copy-right_issue{
+    margin-bottom: 0.2rem;
+  }
+}

@@ -274,7 +274,7 @@ nav .nav ul li:last-child a {
   position: absolute;
   width: 27vw;
   height: 27vw;
-  background-image: url("../image/28.png");
+  background-image: url("/28.d3beda36.png");
   background-size: cover;
   background-position: 100% 100%;
 }
@@ -637,7 +637,7 @@ nav .nav ul li:last-child a {
     position: absolute;
   border: 0.5rem solid var(--1st-color);
   border-radius:0 0.4rem 0.4rem 0.4rem;
-  background-image: url("../image/fox.jpg");
+  background-image: url("/fox.ffdb7a87.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 45% 90%;
@@ -1037,3 +1037,6 @@ input[type="submit"]:hover {
 .move_to_top.active {
   visibility: visible;
 }
+
+
+/*# sourceMappingURL=/style.78032849.css.map */

@@ -117,151 +117,62 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/main.js":[function(require,module,exports) {
-//this scroll button for scroll to top
-var btn = document.getElementsByClassName('move_to_top')[0];
-var btnid = document.getElementById('up_btn');
-function scrollUp() {
-  if (window.pageYOffset > 350) {
-    btn.classList.add('active');
-  } else {
-    btn.classList.remove('active');
+})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
   }
+  return bundleURL;
 }
-window.addEventListener('scroll', scrollUp);
-function scollMover() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
-btnid.addEventListener('click', scollMover);
-AOS.init();
-//style toggale switch background color
-var toggle = document.getElementById("dark");
-var backColor = document.getElementById("wrapper_container");
-var section = document.getElementById("section");
-toggle.addEventListener("click", function () {
-  if (toggle.classList.toggle("active")) {
-    backColor.classList.add("backcolor");
-  } else {
-    backColor.classList.remove("backcolor");
-  }
-});
-
-// ******* bottom to Top scroll ********
-var scrollup = document.getElementById("wrapper_container");
-window.addEventListener("scroll", function () {
-  var scroll = document.querySelector(".scroll_icon");
-  scroll.classList.toggle("active", window.scrollBy > 200);
-});
-function scrollToTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-}
-
-// my qulification
-var ballbtn = document.querySelectorAll('.collapsible-icon');
-var ballcontent = document.querySelectorAll('.content');
-ballbtn.forEach(function (btn, btnind) {
-  btn.addEventListener('click', function () {
-    var icon = btn.firstElementChild;
-    if (icon.classList.contains('fa-chevron-down')) {
-      icon.className = "fa fa-chevron-up";
-      ballcontent.forEach(function (content, contentinx) {
-        if (btnind == contentinx) {
-          content.classList.add('content-show');
-        }
-      });
-    } else if (icon.classList.contains('fa-chevron-up')) {
-      icon.className = 'fa fa-chevron-down';
-      ballcontent.forEach(function (content, contentinx) {
-        if (btnind == contentinx) {
-          content.classList.remove('content-show');
-        }
-      });
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
     }
-  });
-});
-// circular round style
-window.addEventListener("scroll", function () {
-  var skill = document.getElementById("section_skill");
-  var box = document.querySelector(".content-up");
-  var contentPosition = box.getBoundingClientRect().top;
-  var screenposition = window.innerHeight;
-  console.log(contentPosition);
-  if (contentPosition < screenposition) {
-    box.classList.add("start");
-  } else {
-    box.classList.remove("start");
   }
-});
-
-// form validation 
-var form = document.getElementById("form");
-var username = document.getElementById("username");
-var email = document.getElementById("email");
-var phone = document.getElementById("phone");
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  validate();
-});
-
-///more Email Validate
-var isEmail = function isEmail(emailVal) {
-  var atSymble = emailVal.indexOf("@");
-  if (atSymble < 1) return false;
-  var dot = emailVal.lastIndexOf(".");
-  if (dot <= atSymble + 3) return false;
-  if (dot === emailVal.length - 2) return false;
-  return true;
-};
-var validate = function validate() {
-  var usernameVal = username.value.trim();
-  var emailVal = email.value.trim();
-  var phoneVal = phone.value.trim();
-
-  //validate username
-  if (usernameVal === "") {
-    setErrorMsg(username, 'username connot be blank');
-  } else if (usernameVal.length <= 2) {
-    setErrorMsg(username, 'username min 3 char');
-  } else {
-    setSuccessMsg(username);
-  }
-
-  //validate Email
-  if (emailVal == "") {
-    setErrorMsg(email, 'email connot be blank');
-  } else if (!isEmail(emailVal)) {
-    setErrorMsg(emailVal, 'Not a valid Email');
-  } else {
-    setSuccessMsg(email);
-  }
-  //Validate Phone
-  if (phoneVal === "") {
-    setErrorMsg(phone, 'phone connot be blank');
-  } else if (phoneVal.length != 10) {
-    setErrorMsg(phone, 'Not a valid Mobile Num');
-  } else {
-    setSuccessMsg(phone);
-  }
-  // successMsg();
-};
-
-function setErrorMsg(input, errormsgs) {
-  var formControl = input.parentElement;
-  var small = formControl.querySelector("small");
-  formControl.className = " form-control error";
-  small.innerText = errormsgs;
+  return '/';
 }
-function setSuccessMsg(input, successmsgs) {
-  var formControl = input.parentElement;
-  formControl.className = " form-control success";
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
 }
-},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+function updateLink(link) {
+  var newLink = link.cloneNode();
+  newLink.onload = function () {
+    link.remove();
+  };
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+var cssTimeout = null;
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+    cssTimeout = null;
+  }, 50);
+}
+module.exports = reloadCSS;
+},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"css/MediaQuries.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -430,5 +341,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/main.js"], null)
-//# sourceMappingURL=/main.fb6bbcaf.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
+//# sourceMappingURL=/MediaQuries.a543c9b2.js.map
