@@ -1,0 +1,49 @@
+@media screen and (max-width:430px) {
+    nav{
+        height: auto;
+    }
+    nav .nav_child .header{
+        padding: 0.5rem 0;
+    }
+    .nav header{
+        margin: 2rem 0;
+    }
+    .nav ul{
+        border-top: 2px solid #fff;
+        padding-top: 2rem;
+        margin-top: 2rem;
+    }
+    .Header_section #header_1{
+        min-height: 50vh;
+    }
+    .Header_section #header_2{
+        min-height: 30vh;
+    }
+    
+    .content-show {
+    height: 200px;
+  }
+    /* education part  */
+    .under_edu {
+        min-height: 60vh;
+    }
+    #section_skill{
+        min-height: 50vh;
+    }
+    .about {
+  min-height: 50vh;
+}
+.about .about_2 {
+  min-height: 30vh;
+}
+.about_2 .about_div1 {
+  min-width: 50%;
+  min-height: 30vh;
+}
+.about_2 .about_div2{
+      min-height: 35vh;
+}
+}
+
+
+/*# sourceMappingURL=/mobile_media.c3ccce20.css.map */

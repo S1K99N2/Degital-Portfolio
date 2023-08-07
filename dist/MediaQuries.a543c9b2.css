@@ -14,7 +14,6 @@
 .Header_section #header_2{
   width: 100%;
 }
-
   nav .nav ul li:last-child {
     display: none;
   }
@@ -72,8 +71,8 @@
     margin: 2rem 0;
   }
   .content-show {
-    height: 400px;
-  }
+    height: 200px;
+}
   .about .about_1 {
     margin-bottom: 2rem;
   }
@@ -85,11 +84,14 @@
     width: 70%;
     height: 2rem;
   }
+  .about .about_2 {
+    flex-direction: column;
+ } 
 }
 
 @media (max-width: 792px) {
   html {
-    font-size: 2vw;
+    font-size: 2.5vw;
   }
     nav{
       height: 15vh;
@@ -211,13 +213,6 @@ nav .nav ul{
     visibility: visible;
     opacity: 1;
   }
-
-    /* #header_1 {
-    width: 100%;
-    display: block;
-    justify-content: center;
-    align-items: center;
-  } */
 
   .footer_2 {
     display: flex;

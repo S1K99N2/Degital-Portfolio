@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/MediaQuries.css">
+    <link rel="stylesheet" href="./css/mobile_media.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -36,9 +39,9 @@
                         </header>
                         <ul>
                             <li><i class="fa-solid fa-house-user"></i><a href="#section">home</a></li>
-                            <li><i class="fa-solid fa-user-graduate"></i><a href="#section">qulification</a></li>
-                            <li><i class="fa-solid fa-briefcase"></i><a href="#section_edu">skill</a></li>
-                            <li><i class="fa-solid fa-diagram-project"></i><a href="#section_skill">project</a></li>
+                            <li><i class="fa-solid fa-user-graduate"></i><a href="#section_edu">qulification</a></li>
+                            <li><i class="fa-solid fa-briefcase"></i><a href="#section_skill">skill</a></li>
+                            <li><i class="fa-solid fa-diagram-project"></i><a href="#project">project</a></li>
                             <li><i class="fa-solid fa-person-chalkboard"></i><a href="#section_about">about</a></li>
                             <li><i class="fa-solid fa-address-card"></i><a href="#section_footer">contect</a></li>
                             <li><a href="#"><i class="fa-brands fa-react"></i>React-portfolio</a></li>
@@ -254,6 +257,35 @@
                 </div>
             </div>
             <!-- Starting page four -->
+            <div id="project">
+                <div class="project-head">
+                    <h2>project</h2>
+                </div>
+                <div class="project_img">
+                <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            <li class="splide__slide">
+                                <img src="./image/wallpaperflare.com_wallpaper (1).jpg" alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="./image/wallpaperflare.com_wallpaper (2).jpg" alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="./image/wallpaperflare.com_wallpaper (3).jpg" alt="">
+                            </li>
+                            <li class="splide__slide">
+                                <img src="./image/pngegg (33).png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- Ending page four -->
+
+            <!-- Starting page five -->
+
             <div id="section_about">
                 <div class="about">
                     <div class="about_1">
@@ -380,6 +412,13 @@
         </div>
     </div>
     <script type="module" src="./js/main.js"></script>
+    <script>
+        //project part
+            document.addEventListener('DOMContentLoaded', function () {
+                var splide = new Splide('.splide');
+                splide.mount();
+            });
+    </script>
 </body>
 
 </html>
